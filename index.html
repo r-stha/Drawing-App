@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="output.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<body class="bg-gray-200 min-h-screen flex flex-col">
+    <header class="w-full my-3.5 h-10 bg-[#F2F4F7]">
+        <h1 class="text-center py-1.5 ">DRAWING APP</h1>
+    </header>
+
+
+    <div class="flex flex-1 overflow-hidden">
+        <div class=" bg-[#F7F9FB] md:mr-5 min-h-4 px-2 flex"> <!-- md:w-[230px] h-[370px] -->
+
+            <div
+                class=" md:ml-4 ml-1 p-1 md:bg-gray-200 rounded-md md:px-[38px] h-[530px]  items-center flex flex-col py-3 my-1">
+                <!-- <span class="mb-10"><i class="fa-solid fa-paintbrush"></i></span>
+                <span><i class="fa-regular fa-circle "></i></span> -->
+
+                <h2 class="underline">TOOLS</h2>
+                <ul class=" mt-2 gap-2 flex flex-col">
+                    <li>
+                        <button id="pencil" class=" bg-red-500 p-2 rounded-lg"><i class=" fa-solid fa-pencil"></i><span
+                                class="hidden md:inline">pencil</span></button>
+
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-paintbrush"></i>
+                        <span class=" hidden md:inline ">brush</span>
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-eraser"></i>
+                        <span class="hidden md:inline">Eraser</span>
+                    </li>
+                </ul>
+
+                <h2 class="mt-5 underline">Colors</h2>
+                <input type="color" id="inputColor" class="rounded-lg md:w-full  w-10 h-10 p-1">
+
+                <h2 class="mt-5 underline">Shapes</h2>
+                <ul class=" mt-2 gap-2 flex flex-col">
+                    <li>
+                        <button id="circle" class="p-2 rounded-lg"><i class="fa-regular fa-circle"></i> <span
+                                class="hidden md:inline">pencil</span></button>
+
+                    </li>
+                    <li>
+                        <button id="rectangle" class="p-2 rounded-lg"><i class="fa-solid fa-dice-one"></i><span
+                                class=" hidden md:inline ">brush</span></button>
+
+                    </li>
+
+                    <li>
+                        <button id="triangle" class="p-2 rounded-lg"><i class="fa-solid fa-mountain"></i><span
+                                class="hidden md:inline">Eraser</span></button>
+
+                    </li>
+
+                    <li>
+                        <button id="square" class="p-2 rounded-lg"><i class="fa-regular fa-square"></i><span
+                                class="hidden md:inline">Eraser</span></button>
+
+                    </li>
+                    <li>
+                        <button id="line" class="p-2 rounded-lg"><i class="fa-solid fa-grip-lines "></i> <span
+                                class="hidden md:inline">Eraser</span></button>
+
+                    </li>
+
+
+                </ul>
+
+            </div>
+
+
+        </div>
+        <!-- <div class="right flex-1 p-2">
+            <canvas  class="md:w-[85vw] w-[70vw]  h-full mr-8 bg-white"></canvas>
+        </div> -->
+        <main class="flex-1 p-2">
+            <canvas id="myCanvas" class="w-full h-full cursor-crosshair bg-white border border-black rounded"></canvas>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
