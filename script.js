@@ -105,3 +105,10 @@ canvas.addEventListener("mousedown", (e) => {
 });
 canvas.addEventListener("mousemove", draw);
 canvas.addEventListener("mouseup", stopDrawing);
+
+canvas.addEventListener("touchstart", (e) => {
+    startDrawing(e);
+
+});
+canvas.addEventListener("touchmove", draw);
+canvas.addEventListener("touchend", stopDrawing);
