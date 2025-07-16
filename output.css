@@ -544,10 +544,6 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
-.m-1 {
-  margin: 0.25rem;
-}
-
 .my-1 {
   margin-top: 0.25rem;
   margin-bottom: 0.25rem;
@@ -569,10 +565,6 @@ video {
 
 .ml-1 {
   margin-left: 0.25rem;
-}
-
-.mr-1 {
-  margin-right: 0.25rem;
 }
 
 .mr-8 {
