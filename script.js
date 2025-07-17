@@ -8,6 +8,7 @@ let squareBtn = document.getElementById("square");
 let lineBtn = document.getElementById("line");
 let color = document.getElementById("inputColor");
 let eraserBtn = document.getElementById("eraser");
+let downloadBtn = document.getElementById("download");
 
 let isDrawing = false;
 let prevX = 0;
@@ -51,9 +52,9 @@ const stopDrawing = () => {
 };
 
 const draw = (e) => {
-    e.preventDefault(); 
+    e.preventDefault();
     if (!isDrawing) return;
-    
+
 
     const { x, y } = getXY(e);
     ctx.putImageData(snapshot, 0, 0);
@@ -89,11 +90,11 @@ const draw = (e) => {
         ctx.moveTo(prevX, prevY);
         ctx.lineTo(x, y);
         ctx.stroke();
-    }else if(selectedTool == "eraser"){
-        
+    } else if (selectedTool == "eraser") {
 
-        ctx.strokeStyle = "#fff"; 
-        ctx.lineWidth = 20;      
+
+        ctx.strokeStyle = "#fff";
+        ctx.lineWidth = 20;
         ctx.lineTo(x, y);
         ctx.stroke();
         [prevX, prevY] = [x, y];
@@ -106,11 +107,11 @@ const setActiveTool = (tool) => {
         btn.classList.remove("bg-red-500");
     });
     document.getElementById(tool).classList.add("bg-red-500");
-     if (tool === "eraser") {
-        canvas.style.cursor = 'url("Image/image.png") ,auto'; 
-      } else {
+    if (tool === "eraser") {
+        canvas.style.cursor = 'url("Image/image.png") ,auto';
+    } else {
         canvas.style.cursor = 'crosshair';
-        ctx.lineWidth =  1;
+        ctx.lineWidth = 1;
     }
 };
 
@@ -121,7 +122,27 @@ rectangleBtn.addEventListener("click", () => setActiveTool("rectangle"));
 triangleBtn.addEventListener("click", () => setActiveTool("triangle"));
 squareBtn.addEventListener("click", () => setActiveTool("square"));
 lineBtn.addEventListener("click", () => setActiveTool("line"));
-eraserBtn.addEventListener("click", ()=> setActiveTool("eraser"))
+eraserBtn.addEventListener("click", () => setActiveTool("eraser"));
+
+downloadBtn.addEventListener("click", () => {
+    let tempCanvas = document.createElement("canvas");
+    const tempCtx = tempCanvas.getContext("2d");
+
+    tempCanvas.width = canvas.width;
+    tempCanvas.height = canvas.height;
+
+    tempCtx.fillStyle = "#fff";
+    tempCtx.fillRect(0, 0, tempCanvas.width, tempCanvas.height);
+
+    tempCtx.drawImage(canvas, 0, 0);
+
+
+    let a = document.createElement("a");
+    a.download = `image.jpg`;
+    a.href = tempCanvas.toDataURL();
+    a.click();
+    console.log("clicked")
+})
 
 
 canvas.addEventListener("mousedown", startDrawing);
