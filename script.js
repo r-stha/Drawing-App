@@ -9,6 +9,7 @@ let lineBtn = document.getElementById("line");
 let color = document.getElementById("inputColor");
 let eraserBtn = document.getElementById("eraser");
 let downloadBtn = document.getElementById("download");
+let uploadBtn = document.getElementById("upload")
 
 let isDrawing = false;
 let prevX = 0;
@@ -142,7 +143,32 @@ downloadBtn.addEventListener("click", () => {
     a.href = tempCanvas.toDataURL();
     a.click();
     console.log("clicked")
+});
+
+uploadBtn.addEventListener("click", ()=>{
+    let input = document.createElement("input");
+    input.type = "file";
+    input.accept = "image/*";
+    input.click();
+
+    input.addEventListener("change", (e)=>{ 
+    const file = e.target.files[0];
+    if(!file) return;
+
+    const image = new Image();
+
+    image.onload = ()=>{
+        canvas.width = image.width;
+        canvas.height = image.height;
+
+        ctx.clearRect(0,0,canvas.width,canvas.height);
+        ctx.drawImage(image,0,0);
+    }
+    image.src=URL.createObjectURL(file);
 })
+
+});
+
 
 
 canvas.addEventListener("mousedown", startDrawing);

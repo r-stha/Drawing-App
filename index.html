@@ -22,7 +22,7 @@
         <div class=" bg-[#F7F9FB] md:mr-5 min-h-4 px-2 flex"> <!-- md:w-[230px] h-[370px] -->
 
             <div
-                class=" md:ml-4 ml-1 p-1 mt-4 md:bg-gray-200 rounded-md md:px-[38px] h-[580px]  items-center flex flex-col py-3 my-1">
+                class=" md:ml-4 ml-1 p-1 mt-4 md:bg-gray-200 rounded-md md:px-[38px] h-[630px]  items-center flex flex-col py-3 my-1">
                 <!-- <span class="mb-10"><i class="fa-solid fa-paintbrush"></i></span>
                 <span><i class="fa-regular fa-circle "></i></span> -->
 
@@ -74,7 +74,7 @@
 
                     </li>
                     <li>
-                        <button id="line" class="p-2 rounded-lg"><i class="fa-solid fa-grip-lines "></i> <span
+                        <button id="line" class="p-2 rounded-lg mb-2.5"><i class="fa-solid fa-grip-lines "></i> <span
                                 class="hidden md:inline ml-1">Line</span></button>
 
                     </li>
@@ -87,6 +87,11 @@
                   <span class="hidden md:inline">Downaload Image</span>  
                 </button>
 
+                <button id="upload" class="md:bg-slate-500 mt-2 rounded-lg p-1 px-5 mb-2">
+                    <i class="fa-solid fa-upload"></i>
+                   <span class="hidden md:inline"> Upload Image</span>
+                </button>
+
             </div>
 
 
@@ -94,12 +99,12 @@
         <!-- <div class="right flex-1 p-2">
             <canvas  class="md:w-[85vw] w-[70vw]  h-full mr-8 bg-white"></canvas>
         </div> -->
-        <main class="flex-1 p-2">
-            <canvas id="myCanvas" class="w-full h-full cursor-crosshair bg-white border border-black rounded"></canvas>
+        <main class="flex-1 p-2 overflow-hidden">
+            <canvas id="myCanvas" class="block w-full h-full cursor-crosshair bg-white border border-black rounded"></canvas>
         </main>
-    </div>
 
     <script src="script.js"></script>
+    </div>
 </body>
 
 </html>
