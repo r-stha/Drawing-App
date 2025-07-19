@@ -158,11 +158,11 @@ uploadBtn.addEventListener("click", ()=>{
     const image = new Image();
 
     image.onload = ()=>{
-        canvas.width = image.width;
-        canvas.height = image.height;
+        // canvas.width = image.width;
+        // canvas.height = image.height;
 
-        ctx.clearRect(0,0,canvas.width,canvas.height);
-        ctx.drawImage(image,0,0);
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
     }
     image.src=URL.createObjectURL(file);
 })
